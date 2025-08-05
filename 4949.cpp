@@ -9,11 +9,11 @@ int main(){
     cin.tie(0);
 
     while(1){
-        string s;
+        string s; //string 으로 입력 받기
         stack<char> st;
         flag = true;
 
-        getline(cin, s);
+        getline(cin, s); //띄어쓰기 포함한 경우 : getline
         if(s == ".") break;
 
         for(char ch : s){
@@ -22,7 +22,7 @@ int main(){
             } else if(ch == '['){
                 st.push(ch);
             } else if(ch == ')'){
-                if(!st.empty() && st.top() == '('){
+                if(!st.empty() && st.top() == '('){ //스택이 비어있지는 않은지 먼저 체크 (segmentation fault)
                     st.pop();
                 } else {
                     flag = false;
@@ -37,7 +37,7 @@ int main(){
                 }
             }
         }
-        if( flag && st.empty()){
+        if( flag && st.empty()){ //stack이 비어있는지 예외처리
             cout<<"yes\n";
         } else {
             cout << "no\n";

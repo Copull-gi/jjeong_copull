@@ -26,7 +26,7 @@ int main(){
         } else {  // 여는 괄호라면
             st.push(ch); // 파이프 수 증가 or 레이저 
         }
-        prev = ch;
+        prev = ch; //이전 입력 저장
     }
 
     cout << number;

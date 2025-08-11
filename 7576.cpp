@@ -23,7 +23,7 @@ int main(){
             cin >> num;
             board[i][j] = num;
 
-            if(num == 1){
+            if(num == 1){ //모든 시작점 큐에 넣기 (익은 토마토)
                 Q.push({i, j});
             } else if(num == 0){
                 alreadyRipe = false;
